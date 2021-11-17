@@ -10,7 +10,7 @@
 <div class="container">
     <h2>Форма регистрации</h2>
     <div class="for-form">
-        <form>
+        <form action="/sign-up" method="post">
             <!-- Блок ввода Email -->
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
@@ -44,10 +44,16 @@
             <!-- Кнопки отмены и регистрации, тип submit -->
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <button type="submit" class="btn btn-danger" name="action" value="cancel">Cancel</button>
-                <button type="submit" class="btn btn-success" name="action" value="singUp">Sign up</button>
+                <button type="submit" class="btn btn-success" name="action" value="signUp">Sign up</button>
             </div>
         </form>
     </div>
+
+    {% if error == 1 %}
+        <div class="alert alert-danger" role="alert">
+            Пароли не совпадают!
+        </div>
+    {% endif %}
 </div>
 </body>
 </html>
